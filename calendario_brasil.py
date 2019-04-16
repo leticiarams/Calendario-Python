@@ -31,3 +31,9 @@ lista_feriados = inst.holidays(dt.datetime(2000, 12, 31), dt.datetime(2079, 12, 
 
 # Se uma data não é dia útil, por exemplo 01/01/2010, determinar o próximo dia útil
 pŕoximo_dia_util = date(2010,1,1)+br_feriados
+
+######################################################
+#Letícia Ramos  16/04/2019
+#Trata o "Timestamp" retornado da lista_feriados
+lista_feriados = [datetime.strptime(str(i).replace('Timestamp',''), '%Y-%m-%d %H:%M:%S')
+                  for i in inst.holidays(dt.datetime(2018, 1, 1), dt.datetime(2030, 12, 31))]
